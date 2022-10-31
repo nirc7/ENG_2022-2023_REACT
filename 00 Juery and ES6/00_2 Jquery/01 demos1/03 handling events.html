@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03 handling Events</title>
+    <style>
+        .Highlight
+        {
+            background-color: Yellow;
+        }
+    </style>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            wireEvents();
+        });
+
+        function wireEvents() {
+            //___________________________ click ______________________
+//            $('#myButton').click(function(){
+//                $('#res').text("Hello " + $('#txtName').val());
+//            });
+//            $('#myButton2').click(function () {
+//                $('#myButton').click();
+//                $('#res').text($('#res').text() + " through click2");
+//            });
+
+            //___________________________ change select ______________________
+            $('#selBB').change(function () {
+                $('#res').text($(this).val());
+            });
+            $('#txtName').change(function () {
+                $('#res').text($(this).val());
+            });
+            $('#txtarea').change(function () {
+                $('#res').text($(this).val());
+            });
+
+            //___________________________ mouse events ______________________
+//            $('#res').mouseenter(function () {
+//                $(this).text("mouse has entered the div!");
+//                $(this).css('cursor', 'crosshair');
+//            }).mouseleave(function () {
+//                $(this).text("mouse has leaved the div!");
+//            }).mousedown(function (e) {
+//                $(this).text("mouse was pushed down on id=" + $(e.target).attr('id') + 
+//                                " in x="+ e.pageX +" and y=" + e.pageY);
+//            });
+
+            //___________________________ multiple mouse events on\off ______________________
+//            $('#res').on('mouseenter mouseleave mousedown', function (e) {
+//                $(this).text("mouse has entered or leaved!");
+//                if(e.type=='mousedown')
+//                 $(this).text($(this).text() + " mouse was pushed down on id=" + $(e.target).attr('id') + 
+//                                " in x="+ e.pageX +" and y=" + e.pageY);
+//            });
+////            $('#myButton').click(function () {
+////                $('#res').off('mousedown');
+////            });
+//            $('#myButton').click(function () {
+//                $('#res').text("Hello");
+//                $('#res').off();
+            //            });
+
+            //___________________________ hover ______________________
+//            $('#res').hover(
+//                function () { //mouseenter
+//                    $(this).addClass('Highlight');
+//                },
+//                function () { //mouseleave
+//                    $(this).removeClass('Highlight');
+//                }
+//            );
+//                $('#res').hover(
+//                function () { //mouseenter
+//                    $(this).toggleClass('Highlight');
+//                });
+
+            //___________________________ toggle - deprecated! doent exists any more! ______________________
+            //deprecated! doent exists any more!
+            //            $('#res').toggle(
+//                function () { //first click
+//                    alert(1);
+//                    //$(this).addClass('Highlight');
+//                },
+//                function () { //second click
+//                    alert(2);
+//                    //$(this).removeClass('Highlight');
+//                },
+//                function () { //third click
+//                    alert(3);
+//                    //$(this).css('background-color', 'Gray');
+//                }
+//            );
+        }
+
+    </script>
+</head>
+<body>
+    <input id="txtName" type="text" />
+    <input id="myButton" type="button" value="PUSH"/>
+    <input id="myButton2" type="button" value="PUSH2"/>
+    <p><select id="selBB">
+        <option>Jesse Pinkman</option>
+        <option>Hank Schrader</option>
+    </select></p>
+    <p><textarea id="txtarea" rows="2" cols="22"></textarea></p>
+    <div id="res"></div>
+
+
+    <script type="text/javascript">
+        //JS event
+        var button = document.getElementById('myButton');
+        if (document.addEventListener) { //all the other browsers!
+            button.addEventListener('click', function () { alert('clicked!'); }, false);
+        }
+        else { //IE v8 or earlier !
+            button.attachEvent('onclick', function () { alert('IE v8 or earlier clicked!'); });
+                }
+
+        function clickFunction() {
+            alert('click function');
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+
+
+        HebEngDic = [];
+
+        HebEngDic["עשרים"]  = "twenty";
+        HebEngDic["שלושים"] = "thirty";
+        HebEngDic["ארבעים"] = "forty";
+        HebEngDic["חמישים"] = "fifty";
+
+        HebEngDic["אחד"]   = "one";
+        HebEngDic["שתיים"] = "two";
+        HebEngDic["שלוש"]  = "three";
+        HebEngDic["ארבע"]  = "four";
+
+        Sentances = [
+            "עשרים וארבע",
+            "עשרים וארבע",
+            "שלושים ואחד",
+            "חמישים ושתיים",
+            "צפרדעים ואחד",
+            "חמישים ונחש",
+            "שלושים אחד"
+        ]
+
+
+        // iterate over Sentances
+        for (var i = 0; i < Sentances.length; i++) {
+            var wordsArr = Sentances[i].split(' ');
+            var asarot  = wordsArr[0];
+            var achadot = wordsArr[1];
+            if (achadot.charAt(0) == 'ו') {
+                achadot = achadot.substr(1);
+            }
+            else {
+                alert("שגיאה: " + Sentances[i] );
+                continue;
+            }
+            if (typeof (HebEngDic[asarot]) != "undefined")
+                var tens = HebEngDic[asarot];
+            else {
+                alert("שגיאה: " + asarot);
+                continue;
+            }
+            if (typeof (HebEngDic[achadot]) != "undefined")
+                var singles = HebEngDic[achadot];
+            else {
+                alert("שגיאה: " + achadot);
+                continue;
+            }
+
+
+            alert(tens + " " + singles);
+
+        }
+        
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

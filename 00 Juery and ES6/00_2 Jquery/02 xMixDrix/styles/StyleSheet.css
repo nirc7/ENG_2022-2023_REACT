@@ -1,0 +1,39 @@
+﻿div {
+    height: 100px;
+    width: 100px;
+    background-color: #4ECDC4;
+    border-radius: 5px;
+    display: inline-block;
+}
+.user1 {
+    background-color: orange;
+    color:Black;
+}
+.user2 {
+    background-color: black;
+    color:Orange;
+}
+.newgame
+{
+	background-color: #4ECDC4;
+	}
+#player
+{
+	/*height: 25px;*/
+    text-align:center;
+    background-color: white;
+    border:1px solid orange;
+    border-radius: 5px;
+    display:inline;
+}
+.orangeWin
+{
+	background-color:Orange;
+	color:Black;
+	}
+.blackWin
+{
+	background-color:Black;
+	color:White;
+	}
+	

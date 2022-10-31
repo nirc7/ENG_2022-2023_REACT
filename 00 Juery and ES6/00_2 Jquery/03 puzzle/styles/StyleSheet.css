@@ -1,0 +1,19 @@
+﻿.position {
+    height: 100px;
+    width: 100px;
+    /*background-color: #4ECDC4;*/
+    border-radius: 5px;
+    display: inline-block;
+    border:1px solid lightgray;
+    margin:-2px;
+}
+.pic {
+    height: 100px;
+    width: 100px;
+    background-color: #888888;
+    border-radius: 5px;
+    display: inline-block;
+    border:1px solid black;
+    margin:0px;
+}
+	

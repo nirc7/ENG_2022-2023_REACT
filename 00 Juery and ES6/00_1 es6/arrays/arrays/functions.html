@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+
+
+
+        d = () => new Date();
+
+        alert(d());
+
+
+        f = function (x, y) {
+            return x * y;
+        }
+
+        alert(f(2, 3));
+
+        f = (x,y) => x * y;
+
+        alert(f(2,3));
+
+        /*
+
+        function Cat(_name) {
+            this.name = _name;
+            this.sound = function (s) {
+                alert(this.name + " says " + s);
+            }
+        }
+
+        c1 = new Cat("mitzi");
+        c2 = new Cat("pitzi");
+        c1.sound("Miaooo");
+
+        f = c1.sound.bind(c2); // assign does not bind to the object
+
+        f("Miaooo");
+
+
+        // arrow function
+
+        f = x => x * x;
+        alert(f(2));
+        */
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html />
+<html>
+<head>
+    <title>01 starter and selectors</title>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <style>
+        #lastName
+        {
+            color: Green;
+        }
+        .names
+        {
+            background-color: Gray;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () { //anonymous function
+            //________________________by Tag Name________________________
+            //            alert($('div p,p span').text());
+            //            $('div p,p span').each(function () {
+            //                alert($(this).text());
+            //            });
+
+            //________________________by ID________________________
+            //$('#lastName').css('color', 'red');
+            //            $('p', '#firstName').each(function () {
+            //                $(this).css('color', 'yellow');
+            //            });
+            //            $('#firstName p').each(function () {
+            //                $(this).css('color', 'yellow');
+            //            });
+
+            //________________________by Class Name________________________
+            //            $('.names').each(function () {
+            //                alert($(this).text());
+            //            });
+
+            //            //much more complicated
+            //            //not all browser supports
+            //            //only HTML5
+            //            //dont have intellisense
+            //            var namesJS = document.getElementsByClassName('names');
+            //            for (var i = 0; i < namesJS.length; i++) {
+            //                alert(document.getElementsByClassName('names')[i].innerText);
+            //            }
+
+            //            alert($('div.names').length);
+
+            //________________________by Attribute Name________________________
+            //            alert($('[title]').length);
+            //            alert($('div[title]').length);
+            //            alert($('div[title="LName"]').length);
+            alert($('input[type="text"]').length);
+            alert($(':input').length);
+            //alert($(':input[type="text"]').length);
+            //alert($(':input[type="checkbox"]').length);
+            //alert($('select').val());
+            //$('textarea').val($('textarea').val() + " is great!");
+
+            //________________________selector contain________________________
+            //alert($('div:contains("Mor")').length);
+
+            //________________________selector even odd________________________
+            //            $('div:even').each(function () {
+            //                $(this).css('background-color', 'red');
+            //            });
+            //            alert($('div:odd').length);
+
+            //________________________selector first-child________________________
+            //alert($('span:first-child').length);
+
+            //________________________selector eq________________________
+            //            alert($('span:eq(0)').text());
+            //            alert($('span:eq(0)').length);
+            //            alert($('span:eq(1)').length);
+            //            alert($('span:eq(2)').length);
+            //            alert($('span:eq(2)').text());
+            //            alert($('span:eq(2n+1)').length);
+
+            //________________________selector nth-child________________________
+//            alert($('span:nth-child(1)').text());
+//            alert($('span:nth-child(1)').length);
+//            alert($('span:nth-child(2)').length);
+//            $('span:nth-child(2n)').each(function () {
+//                alert($(this).text());
+//            });
+//            $('span:nth-child(2n+1)').each(function () {
+//                alert($(this).text());
+//            });
+            //            alert($('span:eq(2)').text());
+
+            //________________________selector ^="" begins with________________________
+            //alert($('div[id^="fi"]').length);
+
+            //________________________selector $="" ends with________________________
+            //alert($('input[id$="1"]').length);
+
+            //________________________selector $="" ends with________________________
+            //alert($('div[id*="Na"]').text());
+        });
+    </script>
+</head>
+<body>
+    <div id="fid"  >Start</div>
+    <div id="Div1"  >Hello Mor</div>
+    <div id="firstName" class="names" title="FName">
+        <p>Dexter</p>
+    </div>
+    <div id="lastName" class="names" title="LName">Morgan</div>
+    <p>
+        <a><span class="spans">Debra</span> </a>
+    </p>
+    <p class="names" title="pt">Morgan</p>
+    <p>
+        <span class="spans">Harry</span>
+        <span class="spans">Carry</span>
+    </p>
+    <span class="spans">Morgan</span>
+    <p>first name:<input type="text" id="txtFName"/></p>
+    <p>last name:<input type="text" id="txtLName"/></p>
+    <p><input type="button" id="btn1" value="push"/></p>
+    <p><input type="checkbox" id="chk1"/>choose</p>
+    <p><textarea rows="3" cols="10">season 3</textarea></p>
+    <p><select>
+        <option value="" ></option>
+        <option value="LaGuerta" selected>LaGuerta</option>
+        <option value="Batista ">Batista </option>
+    </select></p>
+    <p><img src="img/dex.jpg" alt="dex"/></p>
+</body>
+</html>

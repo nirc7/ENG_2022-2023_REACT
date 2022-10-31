@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+
+
+
+        myDate = () => (new Date());
+
+
+        arr2 = [1, 2]
+
+
+
+        const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+        const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+        const pizzas = [...featured, 'veg pizza', ...specialty];
+
+        alert(pizzas);
+
+        function myFunc(x, y, ...params) { // used rest operator here
+            alert(x);
+            alert(y);
+            alert(params);
+        }
+
+        var inputs = ["a", "b", "c", "d", "e", "f"];
+        myFunc(...inputs); // used spread operator here
+
+
+        function f1(...myArr) {
+            for (var i = 0; i < myArr.length; i++) {
+                alert(myArr[i]);
+            }
+        }
+
+        f1(1, 2, 3);
+
+        f2("bolt", "david", "sami", "susu");
+        arr = ["a", "b", "c", "d"];
+        f2(arr);
+
+
+        function f2(x, y, ...others) {
+            alert("the winner is " + x);
+            alert("second place is " + y);
+            for (var i = 0; i < others.length; i++) {
+                alert(others[i] + " also participated in the race");
+            }
+        }
+
+
+        
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

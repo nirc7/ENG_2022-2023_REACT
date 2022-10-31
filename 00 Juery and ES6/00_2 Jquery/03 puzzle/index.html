@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Puzzle</title>
+    <link href="styles/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="styles/jquery-ui%20v1.10.3.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/jquery-ui%20v1.10.3.js" type="text/javascript"></script>
+    <script src="scripts/jquery.ui.touch-punch.min.js" type="text/javascript"></script> <!--included for mobile touch support-->
+    <!--<script src="scripts/myScript.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.pic').draggable({
+                helper: 'clone'
+            });
+
+            $('.position').droppable({
+                drop: function (event, ui) {
+                    //search for a draggable already on the position we want to drag on (this).
+                    //if there is already such a draggable (already another pic) then move it back to the pics collection
+                    $('#PicsCollection').append($('.ui-draggable', this));
+
+                    //get the pic that we moved onto the position and append it to the position
+                    $(this).append(ui.draggable);
+                }
+            });
+            $('button').click(function () {
+                location.reload();
+            });
+        });
+    </script>
+</head>
+<body>
+     <h1>BrBa Puzzle</h1>
+     <div id="PicsCollection">
+        <div id="Div1" class="pic"><img src="img/pic7.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div2" class="pic"><img src="img/pic5.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div3" class="pic"><img src="img/pic1.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div4" class="pic"><img src="img/pic9.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div5" class="pic"><img src="img/pic2.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div6" class="pic"><img src="img/pic4.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div7" class="pic"><img src="img/pic3.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div8" class="pic"><img src="img/pic6.png" alt="BB" width="100" height="100" /></div>
+        <div id="Div9" class="pic"><img src="img/pic8.png" alt="BB" width="100" height="100" /></div>
+     </div>
+
+     <br />
+     
+    <div id="1" class="position"></div>
+    <div id="2" class="position"></div>
+    <div id="3" class="position"></div>
+    <br>
+    <div id="4" class="position"></div>
+    <div id="5" class="position"></div>
+    <div id="6" class="position"></div>
+    <br>
+    <div id="7" class="position"></div>
+    <div id="8" class="position"></div>
+    <div id="9" class="position"></div>
+    <br>
+    
+    <button>New Game</button>
+</body>
+</html>

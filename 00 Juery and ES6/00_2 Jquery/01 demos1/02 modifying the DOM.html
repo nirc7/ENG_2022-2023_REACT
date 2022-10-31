@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>02 modifying the DOM</title>
+    <style>
+        .sportCar
+        {
+            color: red;
+            font-style: italic;
+        }
+        .familyCar
+        {
+            background-color: Gray;
+            font-family: @Batang;
+        }
+        .Highlight
+        {
+            background-color: Yellow;
+        }
+    </style>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //_________________________each_______________________
+            //            var output = '';
+            //            $('.sportCar, .familyCar').each(function (index ) {
+            //                output += "</br>" + index + ": " + $(this).html();
+            //            });
+            //            $('#result').html(output);
+
+            //_________________________modifying attribute_______________________
+//                        $('div').each(function () {
+//                            //$(this).attr('title', 'Hello');
+//                            this.title='Hello';
+//                        });
+            //$('div').attr('title', 'Hello');
+            // $('div').attr('style', 'color:green');
+            //            $('div').attr(
+            //                {
+            //                    title: 'Hello',
+            //                    style: 'color:green;'
+            //                }
+            //            );
+
+            //_________________________chaining_______________________
+            //            $('div').attr('title', 'Hello')
+            //                    .attr('style', 'color:green')
+            //                    .css('font-size', '20px')
+            //                    .text('new Text');
+
+            //_________________________adding elements_______________________
+            //$('#bmw').append('&nbsp&nbsp&nbsp<span>i8</span>');
+            //$('#ferrari').prepend('<p>Sport Cars</p>');
+            //$('.sportCar,.familyCar').wrap('<p>');
+            //$('.sportCar').remove();
+
+            //_________________________modifying styles_______________________
+            //$('div').css("color", "yellow");
+            //            $('div').css(
+            //                {
+            //                    'font-size': '20px',
+            //                    'border': '2px solid black',
+            //                    'margin': '5px'
+            //                }
+            //            );
+
+            //_________________________modifying Classes_______________________
+            //$('.sportCar').addClass('Highlight');
+            //$('.familyCar').removeClass('familyCar');
+            
+
+
+
+        });
+        function anchorClick(div) {
+            if ($(div).hasClass('Highlight')) {
+                $(div).removeClass('Highlight');
+            }
+            else {
+                $(div).addClass('Highlight');
+            }
+        }
+
+        function anchorClickToggle(div) {
+            $(div).toggleClass('Highlight');
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="sportCar" id="ferrari">Ferrari</div>
+    <div class="sportCar" id="bmw">Bmw</div>
+    <div class="familyCar">Toyota</div>
+    <div class="familyCar">Mazda</div>
+    <label>RESULT:</label><div id="result"></div>
+    <a  href="#" onclick="anchorClick(this)">just an anchor</a><br />
+    <a  id="a" href="#" onclick="anchorClickToggle(this)">just another anchor</a>
+</body>
+</html>
