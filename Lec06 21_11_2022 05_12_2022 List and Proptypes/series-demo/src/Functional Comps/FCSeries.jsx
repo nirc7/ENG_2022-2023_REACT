@@ -1,4 +1,6 @@
 
+import PropTypes from 'prop-types';
+
 export default function FCSeries(props) {
 
   // const btnDeleteSer = () => {
@@ -18,3 +20,9 @@ export default function FCSeries(props) {
     </div>
   );
 }
+
+FCSeries.propTypes = {
+  name: PropTypes.string.isRequired,
+  seasons: PropTypes.number.isRequired
+};
+
