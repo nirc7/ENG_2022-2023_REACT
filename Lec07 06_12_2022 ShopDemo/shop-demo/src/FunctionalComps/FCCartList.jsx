@@ -20,8 +20,10 @@ export default function FCCartList(props) {
     },
   ];
 
-  let cartListStr = cartItemList.map(cart =>
-    <FCCartItem key={cart.id} title={cart.title} price={cart.price} id={cart.id} />
+  let cartListStr = props.cartList.map(cart =>
+    <FCCartItem key={cart.id} title={cart.title}
+      price={cart.price} id={cart.id}
+      removeFromCart={props.removeFromCart} />
   );
 
   return (

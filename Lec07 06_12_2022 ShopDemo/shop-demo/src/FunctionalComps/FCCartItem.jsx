@@ -19,7 +19,7 @@ const bull = (
 
 export default function FCCartItem(props) {
   return (
-    <Card  className='nir' style={{margin:5}}  sx={{ minWidth: 125 }}>
+    <Card className='nir' style={{ margin: 5 }} sx={{ minWidth: 125 }}>
       <CardContent>
         <Typography variant="h5" component="div">
           {bull}{props.title}{bull}
@@ -29,7 +29,7 @@ export default function FCCartItem(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">X</Button>
+        <Button size="small" onClick={() => props.removeFromCart(props.id)}>X</Button>
       </CardActions>
     </Card>
   )
